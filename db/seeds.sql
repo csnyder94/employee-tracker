@@ -1,12 +1,12 @@
 USE employee_db; -- Using employee_db created in schema
 
-INSERT INTO department (name) VALUES
+INSERT INTO department (name) VALUES -- Inserting department values from walkthrough example
   ('Sales'),
   ('Engineering'),
   ('Finance'),
   ('Legal');
 
-INSERT INTO role (title, department_id, salary) VALUES
+INSERT INTO role (title, department_id, salary) VALUES -- Inserting role values from walkthrough example
   ('Sales Lead', 1, 100000),
   ('Salesperson', 1, 80000),
   ('Lead Engineer', 2, 150000),
@@ -16,7 +16,7 @@ INSERT INTO role (title, department_id, salary) VALUES
   ('Legal Team Lead', 4, 250000),
   ('Lawyer', 4, 190000);
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES -- Inserting employee values from walkthrough example
   ('John', 'Doe', 1, NULL),
   ('Mike', 'Chan', 2, 1),
   ('Ashley', 'Rodriguez', 3, NULL),

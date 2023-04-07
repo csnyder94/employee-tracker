@@ -5,7 +5,7 @@ class DB { //Setting up class to perform query operations
     this.connection = connection;
   }
 
-  viewAllDepartments = () =>    //Viewing all departments
+  viewAllDepartments = () =>    //Viewing all departments function runs this query
     this.connection.promise().query(`
       SELECT
         department.id,
@@ -14,7 +14,7 @@ class DB { //Setting up class to perform query operations
         department
     `);
 
-  viewAllRoles = () =>    //Viewing all roles
+  viewAllRoles = () =>    //Viewing all roles function runs this query
     this.connection.promise().query(`
       SELECT
         role.id,
@@ -26,7 +26,7 @@ class DB { //Setting up class to perform query operations
         LEFT JOIN department ON role.department_id = department.id
     `);
 
-  viewAllEmployees = () =>  //Viewing all employees
+  viewAllEmployees = () =>  //Viewing all employees function runs this query
     this.connection.promise().query(`
       SELECT
         employee.id,
@@ -43,22 +43,22 @@ class DB { //Setting up class to perform query operations
         LEFT JOIN employee manager ON employee.manager_id = manager.id;
     `);
 
-  createDepartment = (department) => //Adding a department
+  createDepartment = (department) => //Adding a department function runs this query
     this.connection.promise().query("INSERT INTO department SET ?", department);
 
-  createRole = (role) => //Adding a role
+  createRole = (role) => //Adding a role function runs this query
     this.connection.promise().query("INSERT INTO role SET ?", role);
 
-  createEmployee = (employee) => //Adding an employee
+  createEmployee = (employee) => //Adding an employee function runs this query
     this.connection.promise().query("INSERT INTO employee SET ?", employee);
 
-  updateEmployeeRole = (employeeId, roleId) =>  //Updating an employee's role
+  updateEmployeeRole = (employeeId, roleId) =>  //Updating an employee's role function runs this query
     this.connection.promise().query(
       "UPDATE employee SET role_id = ? WHERE id = ?",
       [roleId, employeeId]
     ); 
 
-    viewAllManagers(employeeId) {   //Find all managers to create new employee
+    viewAllManagers(employeeId) {   //Find all managers function runs this query to choose manager when creating new employee
   return this.connection.promise().query(
     `SELECT 
     DISTINCT e.id, 

@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS employee_db; -- Dropes the database if exists
-CREATE DATABASE employee_db; -- creates the database
+DROP DATABASE IF EXISTS employee_db; -- Drops the database if it already exists
+CREATE DATABASE employee_db; -- Creates the database
 
-USE employee_db; -- use the employee_db database
+USE employee_db; -- Uses the employee database
 
 CREATE TABLE department ( -- Creates department table
   id INT AUTO_INCREMENT PRIMARY KEY,
